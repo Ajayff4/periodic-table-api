@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "symbol": "H",
+    "name": "hydrogen",
+    "atomic_mass": 1.008,
+    "state": "gas",
+    "type": "non-metal",
+    "year_of_discovery": 1766
+  },
+  {
+    "id": 2,
+    "symbol": "He",
+    "name": "helium",
+    "atomic_mass": 4.0026,
+    "state": "gas",
+    "type": "noble gas",
+    "year_of_discovery": 1868
+  },
+  {
+    "id": 3,
+    "symbol": "Li",
+    "name": "lithium",
+    "atomic_mass": 7.0,
+    "state": "solid",
+    "type": "alkali metal",
+    "year_of_discovery": 1817
+  },
+  {
+    "id": 4,
+    "symbol": "Be",
+    "name": "beryllium",
+    "atomic_mass": 9.012183,
+    "state": "solid",
+    "type": "alkaline earth metal",
+    "year_of_discovery": 1798
+  },
+  {
+    "id": 5,
+    "symbol": "B",
+    "name": "boron",
+    "atomic_mass": 10.81,
+    "state": "solid",
+    "type": "metalloid",
+    "year_of_discovery": 1808
+  }
+]
