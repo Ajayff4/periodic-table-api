@@ -11,7 +11,7 @@ const app = express();
 app.listen(PORT, () => console.log('Server is listening on port', PORT));
 
 app.get('/', (req, res) => {
-  return res.status(200).json('Welcome to Periodic Table API. Please visit the documentation page to know how to use it?')
+  return res.status(200).json('Welcome to Periodic Table API. Please visit the documentation page to know how to use it https://github.com/Ajayff4/periodic-table-api')
 });
 
 app.get('/api/elements/properties', (req, res) => {
@@ -42,8 +42,8 @@ app.get('/api/elements/id/:id', (req, res) => {
 });
 
 app.get('/api/elements/symbol/:symbol', (req, res) => {
-  const symbol = req.params.symbol;
-  const result = data.filter(element => element.symbol == symbol)[0];
+  const symbol = req.params.symbol.toLowerCase();
+  const result = data.filter(element => element.symbol.toLowerCase() == symbol)[0];
   if (result) {
     return res.status(200).json(result);
   } else {
