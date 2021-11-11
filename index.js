@@ -23,7 +23,7 @@ app.get('/api/elements/properties', (req, res) => {
   }
 });
 
-app.get('/api/all-elements', (req, res) => {
+app.get('/api/elements', (req, res) => {
   if (data) {
     return res.status(200).json(data);
   } else {
@@ -69,7 +69,7 @@ app.get('/api/elements/names', (req, res) => {
   }
 });
 
-app.get('/api/elements/atomic-mass', (req, res) => {
+app.get('/api/elements/atomic-masses', (req, res) => {
   const result = data.map(element => element.atomic_mass);
   if (result) {
     return res.status(200).json(result);
@@ -78,9 +78,9 @@ app.get('/api/elements/atomic-mass', (req, res) => {
   }
 });
 
-// INPUT: http://localhost:5000/api/elements/pretty-properties/symbol,name,id
+// INPUT: http://localhost:5000/api/elements/custom-properties/symbol,name,id
 // OUTPUT: [{"symbol":"H","name":"hydrogen","id":1},{"symbol":"He","name":"helium","id":2},{"symbol":"Li","name":"lithium","id":3},{"symbol":"Be","name":"beryllium","id":4},{"symbol":"B","name":"boron","id":5}]
-app.get('/api/elements/pretty-properties/:properties', (req, res) => {
+app.get('/api/elements/custom-properties/:properties', (req, res) => {
   const properties = req.params.properties.toLowerCase().split(',');
   const result = [];
   data.forEach(element => {
