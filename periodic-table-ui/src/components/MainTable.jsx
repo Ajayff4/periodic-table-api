@@ -5,7 +5,7 @@ import * as services from '../services/index';
 // import Table from '@mui/material/Table';
 
 const columns = [
-  { id: '#', label: '#' },
+  { id: 'id', label: '#' },
   { id: 'name', label: 'Name', minWidth: 100 },
   { id: 'symbol', label: 'Symbol' },
   { id: 'atomic_mass', label: 'Atomic Mass' },
@@ -47,12 +47,12 @@ const MainTable = () => {
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
-              <TableRow>
+              <TableRow key={"columns"}>
                 {columns.map((column) => (
                   <TableCell
                     key={column.id}
                     align={column.align}
-                    style={{ minWidth: column.minWidth }}
+                    style={{ minWidth: column.minWidth, fontWeight: 'bold' }}
                   >
                     {column.label}
                   </TableCell>
@@ -62,18 +62,14 @@ const MainTable = () => {
             <TableBody>
             { rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code} 
+                  <TableRow hover role="checkbox" tabIndex={-1} key={page * rowsPerPage + index} 
                     style={{ backgroundColor: `#${row['CPK_hex_color']}` }}
                   >
                     {columns.map((column) => {
-                      const value = row[column.id];
+                      const columnValue = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {
-                            column.id === "#" ? 
-                              page*rowsPerPage + (index + 1) : 
-                              value
-                          }
+                          { columnValue }
                         </TableCell>
                       );
                     })}
@@ -83,6 +79,7 @@ const MainTable = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <div className="pagination">
         <TablePagination
           rowsPerPageOptions={[rowsPerPage, 10, 25, 100]}
           component="div"
@@ -92,6 +89,7 @@ const MainTable = () => {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
+        </div>
       </Paper>
     </div>
   );

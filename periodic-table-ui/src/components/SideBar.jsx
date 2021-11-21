@@ -9,15 +9,17 @@ export default function Header() {
   return (
     <div className="side-bar">
       <BrowserRouter>
+        <ul>
+          <li><Link to="/comp1">Comp1</Link></li>
+          <li><Link to="/comp2">Comp2</Link></li>
+          <li><Link to="/comp3">Comp3</Link></li>
+        </ul>
         <Routes>
-          <Route path="/" exact={true} component={<App />} />
-          <Route path="/comp1" component={<Comp1 />} />
-          <Route path="/comp2" component={<Comp2 />} />
-          <Route path="/comp3" component={<Comp3 />} />
+          <Route path="/" exact={true} element={<App />} />
+          <Route path="/comp1" element={<Comp1 />}/>
+          <Route path="/comp2" element={<Comp2 />}/>
+          <Route path="/comp3" element={<Comp3 />}/>
         </Routes>
-        <Link to="/comp1">Comp1</Link>
-        <Link to="/comp2">Comp2</Link>
-        <Link to="/comp3">Comp3</Link>
       </BrowserRouter>
     </div>
   );
