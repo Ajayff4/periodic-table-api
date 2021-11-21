@@ -5,7 +5,6 @@
 const data = require('./data.json');
 const PORT = process.env.PORT || 5000;
 const express = require('express');
-const axios = require('axios');
 const app = express();
 
 app.listen(PORT, () => console.log('Server is listening on port', PORT));
@@ -31,23 +30,23 @@ app.get('/api/elements', (req, res) => {
   }
 });
 
-app.get('/api/elements/id/:id', (req, res) => {
+app.get('/api/elements/ids/:id', (req, res) => {
   const id = req.params.id;
   const result = data.filter(element => element.id == id)[0];
   if (result) {
     return res.status(200).json(result);
   } else {
-    return res.status(500).json("No data found in records. Are you looki'n for a new element ???");
+    return res.status(500).json("No such element found in records. Are you looki'n for a new element ???");
   }
 });
 
-app.get('/api/elements/symbol/:symbol', (req, res) => {
+app.get('/api/elements/symbols/:symbol', (req, res) => {
   const symbol = req.params.symbol.toLowerCase();
   const result = data.filter(element => element.symbol.toLowerCase() == symbol)[0];
   if (result) {
     return res.status(200).json(result);
   } else {
-    return res.status(500).json("No data found in records. Are you looki'n for a new element ???");
+    return res.status(500).json("No such element found in records. Are you looki'n for a new element ???");
   }
 });
 

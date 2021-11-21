@@ -38,8 +38,8 @@ app url: https://periodic-table-app.herokuapp.com
 #### description: returns all the elements.
 
 > 3. TO GET A SINGLE ELEMENT BY ID
-#### endpoint: **/api/elements/id/:id**
-#### example: **/api/elements/id/1**
+#### endpoint: **/api/elements/ids/:id**
+#### example: **/api/elements/ids/1**
 #### output: ```{"id":1,"symbol":"H","name":"hydrogen","atomic_mass":1.008,"state":"gas","type":"non-metal","year_of_discovery":1766}```
 #### description: returns the requested element.
 
