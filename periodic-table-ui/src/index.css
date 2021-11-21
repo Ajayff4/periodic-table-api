@@ -18,3 +18,22 @@ code {
   font-weight: bold;
   font-size: larger;
 }
+
+.main-table {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border: 1px solid green;
+  flex-direction: column;
+  width: 80%;
+}
+
+.side-bar {
+  display: inline-grid;
+  align-items: center;
+  justify-content: left;
+  border: 1px solid green;
+  flex-direction: row;
+  background-color: lime;
+  width: 20%;
+}
